@@ -1,4 +1,4 @@
-//let a,b,c,d,Size,PM,TM,ND,type; 
+//let a,b,c,d,Size,PM,TM,ND,type;
 function setup() {
 	if (document.getElementById("radio1").checked) {
 		Organic();
@@ -53,7 +53,7 @@ function Embedded() {
 }
 
 function report() {
-	document.write('<html><head><link rel="stylesheet" href="STYLE.css"/></head><body class="bd"><div class="list"><h3>Тип проекту: </h3>');
+	document.write('<html><head><link rel="stylesheet" href="STYLE.css"/></head><body><div class="list"><h3>Тип проекту: </h3>');
 	switch(type){
 		case 1:
 			document.write('<label><input name="1" type="radio" id="radio1" checked/><span>Розповсюджений</span></label><br></div>');

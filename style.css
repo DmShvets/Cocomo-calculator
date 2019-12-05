@@ -29,8 +29,8 @@ h1{
 .left{
   float: left;
   margin-left: 55px;
-  //width: 350px;
-//  height: 300px;
+//  width: 355px;
+//  height: 245px;
 }
 .left h3{
   color: #fff;
@@ -95,7 +95,7 @@ select{
   margin-left: 5px;
   margin: 0 10pt;
   color: #fff;
-  font-size: 24px;
+  font-size: 26px;
 }
 .list input[type="radio"]{
  -webkit-appearance:none;
@@ -185,6 +185,7 @@ transform: rotate(-45deg);
 /************Textbox************/
 .right{
    float: right;
+height:265px;
 }
 .right h3{
   color: #fff;
@@ -297,7 +298,12 @@ input[type=radio] {
 }
 
 */
-
+.order td{
+  width: 50%;
+}
+.order{
+  clear: both;
+}
 @media(max-width: 1130px){
   .down{
   clear: both;
