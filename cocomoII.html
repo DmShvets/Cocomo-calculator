@@ -1,0 +1,221 @@
+﻿<html>
+	<head>
+		    <link rel="stylesheet" href="STYLE.css" />
+		     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
+		     <script language="javascript" type="text/javascript" src="scriptII.js"> </script>
+		     <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				if(Size){
+					$("#butt").css("display", "none");
+				$("#butt").css( "transition", ".1s");
+					$("#butt").fadeIn(1000);
+				}
+				//$("#butt").css("visibility", "visible");
+				$(".down h3").css("display", "none");
+				$(".down h3").css( "transition", ".1s");
+				$(".down h3").fadeIn(1000);
+			});
+		});
+	</script>
+		<div class="content">
+		<h1>COCOMO</h1>
+		<div class="left">
+		<h3>Модель</h3>
+		<div class="select">
+		<select onchange="window.location.href=this.options[this.selectedIndex].value">
+			<option value="file:///F:/Project/cocomoII.html">COCOMO II</option>
+			<option value="file:///F:/Project/cocomo.html">COCOMO</option>
+		</select>
+		</div>
+		<div class="list">
+		<h3>Тип проекту</h3>
+		<label><input name="1" type="radio" id="radio1" checked/><i></i><span>Розповсюджений</span></label><br>
+		<label><input name="1" type="radio" id="radio2" /><i></i><span>Напів-незалежний</span></label><br>
+		<label><input name="1" type="radio" id="radio3"><i></i><span>Вбудований</span></label></input><br>
+		</div>
+		</div>
+		<div class="right">
+		<h3>Кількість рядків</h3>
+		<input onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" type="text" class="text" id="text" name="">
+		<button type="submit" onclick="setup()">Розрахувати</button>
+		<button type="submit" onclick="report()" id="butt">Звіт</button>
+			</div>
+			<div class="down">
+				<h2>Результат</h2>
+				<h3 id="PM"></h3>
+				<h3 id="TM"></h3>
+				<h3 id="ND"></h3>
+				<table>
+						<thead>
+						<tr>
+								<th rowspan="2">Атрибути вартості, CD<sub>k</sub></th>
+								<th colspan="6">Рейтинг</th>
+						</tr>
+						<tr>
+								<th>Дуже низький</th>
+								<th>Низький</th>
+								<th>Середній</th>
+								<th>Високий</th>
+								<th>Дуже високий</th>
+								<th>Критичний</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+								<th colspan="7">Характеристики продукта</th>
+						</tr>
+						<tr>
+								<td>1. Вимоги до надійності ПЗ</td>
+								<td><div class="list"/><label><input type="radio" name="t1" value="0.75"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t1" value="0.88"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t1" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t1" value="1.15"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t1" value="1.40"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>2. Розмір БД проекта</td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="t2" value="0.94"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t2" value="1.00" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t2" value="1.08"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t2" value="1.16"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>3. Складність продукта</td>
+								<td><div class="list"/><label><input type="radio" name="t3" value="0.70"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t3" value="0.85"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t3" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t3" value="1.15"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t3" value="1.30"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t3" value="1.65"/><i></i></label></td>
+						</tr>
+						<tr>
+								<td colspan="7">Характеристики апаратного забезпечення</td>
+						</tr>
+						<tr>
+								<td>4. Обмеження швидкодії виконання</td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="t4" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t4" value="1.11"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t4" value="1.30"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t4" value="1.66"/><i></i></label></td>
+						</tr>
+						<tr>
+								<td>5. Обмеження пам'яті</td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="t5" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t5" value="1.06"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t5" value="1.21"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t5" value="1.56"/><i></i></label></td>
+						</tr>
+						<tr>
+								<td>6. Нестабільність середовища віртуальної машини</td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="t6" value="0.87"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t6" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t6" value="1.15"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t6" value="1.30"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>7. Потребуємий час на відновлення</td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="t7" value="0.87"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t7" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t7" value="1.07"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t7" value="1.15"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td colspan="7">Характеристики персонала</td>
+						</tr>
+						<tr>
+								<td>8. Аналітичні здібності</td>
+								<td><div class="list"/><label><input type="radio" name="t8" value="1.46"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t8" value="1.19"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t8" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t8" value="0.86"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t8" value="0.71"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>9. Досвід розробки</td>
+								<td><div class="list"/><label><input type="radio" name="t9" value="1.29"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t9" value="1.13"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t9" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t9" value="0.91"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t9" value="0.82"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>10. Здібності до розробки ПЗ</td>
+								<td><div class="list"/><label><input type="radio" name="t10" value="1.42"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t10" value="1.17"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t10" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t10" value="0.86"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t10" value="0.70"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>11. Досвід використання віртуальних машин</td>
+								<td><div class="list"/><label><input type="radio" name="t11" value="1.21"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t11" value="1.10"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t11" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t11" value="0.9"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>12. Складність продукта</td>
+								<td><div class="list"/><label><input type="radio" name="t12" value="1.14"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t12" value="1.07"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t12" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t12" value="0.95"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td colspan="7">Характеристики проекта</td>
+						</tr>
+						<tr>
+								<td>13. Застосування методів розробки ПЗ</td>
+								<td><div class="list"/><label><input type="radio" name="t13" value="1.24"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t13" value="1.10"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t13" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t13" value="0.91"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t13" value="0.82"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>14. Використання інструментарію розробки ПЗ</td>
+								<td><div class="list"/><label><input type="radio" name="t14" value="1.24"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t14" value="1.10"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t14" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t14" value="0.91"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t14" value="0.83"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+						<tr>
+								<td>15. Вимоги дотримання термінів розробки</td>
+								<td><div class="list"/><label><input type="radio" name="t15" value="1.23"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t15" value="1.08"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t15" value="1" checked/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t15" value="1.04"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="t15" value="1.10"/><i></i></label></td>
+								<td><div class="list"/><label><input type="radio" name="n/a" value="1.40"/><b></b></label></td>
+						</tr>
+				</div>
+						</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
