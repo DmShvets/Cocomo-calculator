@@ -1,0 +1,12 @@
+*{
+margin: 0;
+padding: 0;
+}
+.content{
+  position: relative;
+  padding: 40px 60px;
+  color: #fff;
+  text-align: center;
+  transition: 0.5s;
+  z-index: 1000;
+}
