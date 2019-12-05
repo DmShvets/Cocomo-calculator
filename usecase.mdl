@@ -1,0 +1,600 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 2006.0.0.060314"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5DDB952C0215"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5DDB952C0217"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list
+	    (object Class "Користувач"
+		quid       	"5DDB953D0358"
+		stereotype 	"Actor")
+	    (object Class "Система"
+		quid       	"5DDB962C00BE"
+		stereotype 	"Actor"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DDB967701EB"
+			supplier   	"Use Case View::Обрахунок даних"
+			quidu      	"5DDB959E0201")))
+	    (object UseCase "Введення даних"
+		quid       	"5DDB957A022D"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DDB961D016D"
+			supplier   	"Use Case View::Обрахунок даних"
+			quidu      	"5DDB959E0201")
+		    (object Dependency_Relationship
+			quid       	"5DDB964A0359"
+			supplier   	"Use Case View::Передача даних"
+			quidu      	"5DDB963D02AA")))
+	    (object UseCase "Обрахунок даних"
+		quid       	"5DDB959E0201"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DDB96A902AE"
+			stereotype 	"include"
+			supplier   	"Use Case View::Відображення звіту"
+			quidu      	"5DDB95C90209")
+		    (object Dependency_Relationship
+			quid       	"5DDB979D0124"
+			stereotype 	"include"
+			supplier   	"Use Case View::Генерування звіту"
+			quidu      	"5DDB95B40031")))
+	    (object UseCase "Генерування звіту"
+		quid       	"5DDB95B40031"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DDB96B80189"
+			stereotype 	"extend"
+			supplier   	"Use Case View::Відображення звіту"
+			quidu      	"5DDB95C90209")))
+	    (object UseCase "Відображення звіту"
+		quid       	"5DDB95C90209"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DDB96D0037A"
+			supplier   	"Use Case View::Перегляд звіту"
+			quidu      	"5DDB96C10014")))
+	    (object UseCase "Передача даних"
+		quid       	"5DDB963D02AA"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5DDB966B005E"
+			supplier   	"Use Case View::Система"
+			quidu      	"5DDB962C00BE")
+		    (object Dependency_Relationship
+			quid       	"5DDB9822017B"
+			stereotype 	"extend"
+			supplier   	"Use Case View::Обрахунок даних"
+			quidu      	"5DDB959E0201")))
+	    (object UseCase "Перегляд звіту"
+		quid       	"5DDB96C10014")
+	    (object Association "$UNNAMED$0"
+		quid       	"5DDB95DB011A"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"5DDB95DB03DE"
+			supplier   	"Use Case View::Введення даних"
+			quidu      	"5DDB957A022D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"5DDB95DB03E0"
+			supplier   	"Use Case View::Користувач"
+			quidu      	"5DDB953D0358")))
+	    (object Association "$UNNAMED$3"
+		quid       	"5DDB968A0212"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"5DDB968A03AC"
+			supplier   	"Use Case View::Обрахунок даних"
+			quidu      	"5DDB959E0201"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$5"
+			quid       	"5DDB968A03AF"
+			supplier   	"Use Case View::Система"
+			quidu      	"5DDB962C00BE")))
+	    (object Association "$UNNAMED$6"
+		quid       	"5DDB96D50330"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$7"
+			quid       	"5DDB96D6018E"
+			supplier   	"Use Case View::Перегляд звіту"
+			quidu      	"5DDB96C10014"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$8"
+			quid       	"5DDB96D60190"
+			supplier   	"Use Case View::Користувач"
+			quidu      	"5DDB953D0358")))
+	    (object Association "$UNNAMED$9"
+		quid       	"5DDB97AF0130"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$10"
+			quid       	"5DDB97B00018"
+			supplier   	"Use Case View::Перегляд звіту"
+			quidu      	"5DDB96C10014"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$11"
+			quid       	"5DDB97B0001B"
+			supplier   	"Use Case View::Користувач"
+			quidu      	"5DDB953D0358")))
+	    (object Association "$UNNAMED$12"
+		quid       	"5DDB981B028B"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$13"
+			quid       	"5DDB981C0113"
+			supplier   	"Use Case View::Обрахунок даних"
+			quidu      	"5DDB959E0201"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$14"
+			quid       	"5DDB981C0117"
+			supplier   	"Use Case View::Передача даних"
+			quidu      	"5DDB963D02AA")))
+	    (object Association "$UNNAMED$15"
+		quid       	"5DDB9FE6004B"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$16"
+			quid       	"5DDB9FE60306"
+			supplier   	"Use Case View::Передача даних"
+			quidu      	"5DDB963D02AA"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$17"
+			quid       	"5DDB9FE60309"
+			supplier   	"Use Case View::Користувач"
+			quidu      	"5DDB953D0358"))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5DDB952C036F"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	1081
+		items      	(list diagram_item_list
+		    (object UseCaseView "Use Case View::Генерування звіту" @1
+			location   	(1990, 1123)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(1990, 1262)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Генерування звіту")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DDB95B40031"
+			width      	225
+			height     	119)
+		    (object UseCaseView "Use Case View::Відображення звіту" @2
+			location   	(2385, 686)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(2385, 824)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Відображення звіту")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DDB95C90209"
+			height     	118)
+		    (object UseCaseView "Use Case View::Введення даних" @3
+			location   	(809, 615)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(809, 753)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Введення даних")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DDB957A022D"
+			height     	118)
+		    (object DependencyView "" @4
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	(object SegLabel @5
+			    Parent_View 	@4
+			    location   	(2053, 874)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    anchor     	10
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"<<extend>>"
+			    pctDist    	0.500000
+			    height     	120
+			    orientation 	0)
+			line_color 	3342489
+			quidu      	"5DDB96B80189"
+			client     	@1
+			supplier   	@2
+			vertices   	(list Points
+			    (2040, 1062)
+			    (2239, 849))
+			line_style 	0)
+		    (object UseCaseView "Use Case View::Перегляд звіту" @6
+			location   	(761, 1146)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(761, 1284)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Перегляд звіту")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DDB96C10014"
+			height     	118)
+		    (object UseCaseView "Use Case View::Обрахунок даних" @7
+			location   	(1449, 687)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@7
+			    location   	(1449, 825)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Обрахунок даних")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DDB959E0201"
+			height     	118)
+		    (object DependencyView "" @8
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	(object SegLabel @9
+			    Parent_View 	@8
+			    location   	(1916, 566)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    anchor     	10
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"<<include>>"
+			    pctDist    	0.500000
+			    height     	120
+			    orientation 	0)
+			line_color 	3342489
+			quidu      	"5DDB96A902AE"
+			client     	@7
+			supplier   	@2
+			vertices   	(list Points
+			    (1557, 685)
+			    (2275, 685))
+			line_style 	0)
+		    (object DependencyView "" @10
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	(object SegLabel @11
+			    Parent_View 	@10
+			    location   	(1843, 851)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    anchor     	10
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"<<include>>"
+			    pctDist    	0.500000
+			    height     	120
+			    orientation 	0)
+			line_color 	3342489
+			quidu      	"5DDB979D0124"
+			client     	@7
+			supplier   	@1
+			vertices   	(list Points
+			    (1619, 823)
+			    (1914, 1062))
+			line_style 	0)
+		    (object ClassView "Class" "Use Case View::Користувач" @12
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(327, 915)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@12
+			    location   	(327, 1075)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	2893
+			    justify    	0
+			    label      	"Користувач")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5DDB953D0358"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$0" @13
+			location   	(516, 794)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DDB95DB011A"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @14
+				Parent_View 	@13
+				location   	(171, 179)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DDB95DB03DE"
+				client     	@13
+				supplier   	@3
+				vertices   	(list Points
+				    (516, 794)
+				    (648, 713))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$2" @15
+				Parent_View 	@13
+				location   	(171, 179)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DDB95DB03E0"
+				client     	@13
+				supplier   	@12
+				vertices   	(list Points
+				    (516, 794)
+				    (384, 876))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$9" @16
+			location   	(519, 1015)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DDB97AF0130"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$10" @17
+				Parent_View 	@16
+				location   	(174, 400)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DDB97B00018"
+				client     	@16
+				supplier   	@6
+				vertices   	(list Points
+				    (519, 1015)
+				    (655, 1087))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$11" @18
+				Parent_View 	@16
+				location   	(174, 400)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DDB97B0001B"
+				client     	@16
+				supplier   	@12
+				vertices   	(list Points
+				    (519, 1015)
+				    (384, 944))
+				line_style 	0)))
+		    (object DependencyView "" @19
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DDB961D016D"
+			client     	@3
+			supplier   	@7
+			vertices   	(list Points
+			    (917, 625)
+			    (1339, 672))
+			line_style 	0)))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5DDB952C0216"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5DDB952C0218"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5DDB952C0372"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5DDB952C0218"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5DDB952C036E"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"5DDB952C0216")
+    process_structure 	(object Processes
+	quid       	"5DDB952C0219"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5DDB952C021B"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"5DDB952C021A"))
