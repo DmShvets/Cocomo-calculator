@@ -3,28 +3,46 @@
 		    <link rel="stylesheet" href="STYLE.css" />
 		     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
 		     <script language="javascript" type="text/javascript" src="script.js"> </script>
+		     <script src="https://code.jquery.com/jquery-3.4.1.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				$(".down h3").css("display", "none");
+				$(".down h3").css( "transition", ".1s");
+				$(".down h3").fadeIn(1000);
+			});
+});
+	</script>
 		<div class="content">
 		<h1>COCOMO</h1>
+		<div class="left">
 		<h3>Модель</h3>
+		<div class="select">
 		<select>
 			<option>COCOMO</option>
 			<option>COCOMO II</option>
 		</select>
+		</div>
+		<div class="list">
 		<h3>Тип проекту</h3>
-		<input name="1" type="radio">Розповсюджений</input>
-		<input name="1" type="radio">Напів-незалежний</input>
-		<input name="1" type="radio">Вбудований</input>
-		<h3>Тип проекту</h3>
-		<input type="text" name="">
-		<button>Розрахувати</button>
-		<h3>Тип проекту</h3>
-		<h3>Тип проекту</h3>
-		<h3>Тип проекту</h3>
-		<h3>Тип проекту</h3>
-		<h3>Тип проекту</h3>
-		<h3>Тип проекту</h3>
+		<label><input name="1" type="radio" id="radio1" checked/><b></b><i></i><span>Розповсюджений</span></label><br>
+		<label><input name="1" type="radio" id="radio2" /><b></b><i></i><span>Напів-незалежний</span></label><br>
+		<label><input name="1" type="radio" id="radio3"><b></b><i></i><span>Вбудований</span></label></input><br>
+		</div>
+		</div>
+		<div class="right">
+		<h3>Кількість рядків</h3>
+		<input onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" type="text" class="text" id="text" name="">
+		<button type="submit" onclick="setup()">Розрахувати</button>
+			</div>
+			<div class="down">
+		<h2>Результат</h2>
+		<h3 id="PM"></h3>
+		<h3 id="TM"></h3>
+		<h3 id="ND"></h3>
+		</div>
 	</div>
 	</body>
 </html>
